@@ -1,0 +1,185 @@
+/**
+ * Tezex Dashboard - Custom Styles
+ */
+
+/* Status badge colors */
+.bg-label-cyan {
+  background-color: rgba(0, 207, 232, 0.12) !important;
+  color: #00cfe8 !important;
+}
+
+/* Enhance table readability */
+.table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+/* Card hover effects */
+.card {
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Status timeline */
+.status-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.status-timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background-color: #e9ecef;
+}
+
+.status-timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.status-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.5rem;
+  top: 0.25rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #7367f0;
+  z-index: 1;
+}
+
+.status-timeline-item.completed::before {
+  background-color: #28c76f;
+  border-color: #28c76f;
+}
+
+/* Price calculator styling */
+.price-display {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.price-display h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Tracking number display */
+.tracking-number {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background-color: #f8f9fa;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #dee2e6;
+}
+
+/* Excel import preview */
+.import-preview {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Client card styling */
+.client-card {
+  border-left: 4px solid #7367f0;
+}
+
+/* Parcel card styling */
+.parcel-card {
+  border-left: 4px solid #00cfe8;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.empty-state i {
+  font-size: 4rem;
+  color: #b8c2cc;
+  margin-bottom: 1rem;
+}
+
+.empty-state h5 {
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: #b8c2cc;
+}
+
+/* Loading spinner */
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+/* Custom scrollbar for tables */
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Filter section */
+.filter-section {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Quick action buttons */
+.quick-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .price-display h2 {
+    font-size: 2rem;
+  }
+
+  .tracking-number {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

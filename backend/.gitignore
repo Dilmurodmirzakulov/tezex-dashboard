@@ -1,0 +1,11 @@
+/dist
+/node_modules
+/build
+logs
+*.log
+.DS_Store
+/coverage
+.env
+.env.local
+*.swp
+.tmp

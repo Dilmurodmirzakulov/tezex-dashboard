@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en" class="layout-menu-fixed layout-compact" data-assets-path="../../../assets/">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Import Prices | Tezex</title>
+    <link rel="icon" type="image/x-icon" href="../../../assets/img/favicon/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../../../assets/vendor/fonts/iconify-icons.css" />
+    <link rel="stylesheet" href="../../../assets/vendor/css/core.css" />
+    <link rel="stylesheet" href="../../../assets/css/demo.css" />
+    <link rel="stylesheet" href="../../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../../assets/css/tezex.css" />
+    <script src="../../../assets/vendor/js/helpers.js"></script>
+    <script src="../../../assets/js/config.js"></script>
+  </head>
+  <body>
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+          <div class="app-brand demo">
+            <a href="../dashboard.html" class="app-brand-link">
+              <span class="app-brand-logo demo"
+                ><span class="text-primary"><i class="bx bxs-package" style="font-size: 32px"></i></span
+              ></span>
+              <span class="app-brand-text demo menu-text fw-bold ms-2">Tezex</span>
+            </a>
+            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto"
+              ><i class="bx bx-chevron-left d-block d-xl-none align-middle"></i
+            ></a>
+          </div>
+          <div class="menu-divider mt-0"></div>
+          <ul class="menu-inner py-1">
+            <li class="menu-item">
+              <a href="../dashboard.html" class="menu-link"
+                ><i class="menu-icon tf-icons bx bx-home-smile"></i>
+                <div>Dashboard</div></a
+              >
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle"
+                ><i class="menu-icon tf-icons bx bx-user"></i>
+                <div>Clients</div></a
+              >
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="../clients/list.html" class="menu-link"><div>All Clients</div></a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle"
+                ><i class="menu-icon tf-icons bx bx-package"></i>
+                <div>Parcels</div></a
+              >
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="../parcels/list.html" class="menu-link"><div>All Parcels</div></a>
+                </li>
+                <li class="menu-item">
+                  <a href="../parcels/create.html" class="menu-link"><div>Create Parcel</div></a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="../tracking-management.html" class="menu-link"
+                ><i class="menu-icon tf-icons bx bx-map"></i>
+                <div>Tracking Management</div></a
+              >
+            </li>
+            <li class="menu-item active open">
+              <a href="javascript:void(0);" class="menu-link menu-toggle"
+                ><i class="menu-icon tf-icons bx bx-dollar"></i>
+                <div>Pricing</div></a
+              >
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="list.html" class="menu-link"><div>Price List</div></a>
+                </li>
+                <li class="menu-item active">
+                  <a href="import.html" class="menu-link"><div>Import Prices</div></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </aside>
+        <div class="layout-page">
+          <nav
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme">
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)"><i class="bx bx-menu bx-md"></i></a>
+            </div>
+            <div class="navbar-nav-right d-flex align-items-center">
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a
+                    class="nav-link dropdown-toggle hide-arrow p-0"
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="../../../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="../auth/login.html"
+                        ><i class="bx bx-power-off bx-md me-3"></i><span>Log Out</span></a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="content-wrapper">
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="mb-4">
+                <a href="list.html" class="text-muted"><i class="bx bx-arrow-back"></i> Back to Price List</a>
+                <h4 class="fw-bold mt-2">Import Pricing</h4>
+              </div>
+              <div class="row">
+                <div class="col-lg-8 col-12 mb-4">
+                  <div class="card">
+                    <h5 class="card-header">Upload Excel File</h5>
+                    <div class="card-body">
+                      <div class="mb-4">
+                        <label for="excelFile" class="form-label">Select File (Excel or CSV)</label>
+                        <input type="file" class="form-control" id="excelFile" accept=".xlsx,.xls,.csv" />
+                        <small class="text-muted">Supported formats: .xlsx, .xls, .csv</small>
+                      </div>
+                      <div class="d-flex gap-2">
+                        <button type="button" class="btn btn-label-primary" id="loadSampleBtn">
+                          <i class="bx bx-data me-1"></i> Load Sample Data
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mt-4" id="previewSection" style="display: none">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                      <h5 class="mb-0">Preview</h5>
+                      <span class="badge bg-label-info" id="previewCount">0 countries</span>
+                    </div>
+                    <div class="table-responsive import-preview">
+                      <table class="table table-sm">
+                        <thead>
+                          <tr>
+                            <th>Country</th>
+                            <th>0.5</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>5</th>
+                            <th>10</th>
+                            <th>15</th>
+                            <th>20</th>
+                            <th>30</th>
+                            <th>40</th>
+                            <th>50</th>
+                            <th>60</th>
+                            <th>70</th>
+                            <th>Per kg>70</th>
+                          </tr>
+                        </thead>
+                        <tbody id="previewTableBody"></tbody>
+                      </table>
+                    </div>
+                    <div class="card-footer">
+                      <button type="button" class="btn btn-primary" id="importBtn" disabled>
+                        <i class="bx bx-import me-1"></i> Import Pricing
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-12 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="mb-3">Required Format</h5>
+                      <p class="text-muted small mb-3">Your file should have these columns:</p>
+                      <ul class="small">
+                        <li>Country</li>
+                        <li>0.5, 1, 2, 3, 5, 10, 15, 20, 30, 40, 50, 60, 70</li>
+                        <li>perKgAbove70 (or "Per KG > 70")</li>
+                      </ul>
+                      <hr />
+                      <h6 class="mb-2">Example Row:</h6>
+                      <div class="table-responsive">
+                        <table class="table table-sm table-bordered">
+                          <thead>
+                            <tr>
+                              <th>Country</th>
+                              <th>0.5</th>
+                              <th>...</th>
+                              <th>70</th>
+                              <th>>70</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>USA</td>
+                              <td>25</td>
+                              <td>...</td>
+                              <td>790</td>
+                              <td>12</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="alert alert-warning mt-3">
+                        <small>
+                          <i class="bx bx-info-circle me-1"></i>
+                          <strong>Note:</strong> For production, integrate SheetJS library for full Excel support.
+                          Currently CSV files work best.
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl">
+                <div
+                  class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+                  <div class="text-body">© 2026 Tezex Parcel Delivery. All rights reserved.</div>
+                </div>
+              </div>
+            </footer>
+            <div class="content-backdrop fade"></div>
+          </div>
+        </div>
+      </div>
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <script src="../../../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../../../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../../assets/vendor/js/bootstrap.js"></script>
+    <script src="../../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../../../assets/vendor/js/menu.js"></script>
+    <script src="../../assets/js/init-data.js"></script>
+    <script src="../../assets/js/pricing.js"></script>
+    <script src="../../assets/js/pricing-import.js"></script>
+    <script src="../../../assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" class="layout-menu-fixed layout-compact" data-assets-path="../../../assets/">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Login | Tezex</title>
+    <link rel="icon" type="image/x-icon" href="../../../assets/img/favicon/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../../../assets/vendor/fonts/iconify-icons.css" />
+    <link rel="stylesheet" href="../../../assets/vendor/css/core.css" />
+    <link rel="stylesheet" href="../../../assets/vendor/css/pages/page-auth.css" />
+    <link rel="stylesheet" href="../../../assets/css/demo.css" />
+    <script src="../../../assets/vendor/js/helpers.js"></script>
+    <script src="../../../assets/js/config.js"></script>
+  </head>
+  <body>
+    <div class="container-xxl">
+      <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner">
+          <div class="card">
+            <div class="card-body">
+              <div class="app-brand justify-content-center mb-6">
+                <a href="../dashboard.html" class="app-brand-link gap-2">
+                  <span class="app-brand-logo demo">
+                    <span class="text-primary">
+                      <i class="bx bxs-package" style="font-size: 48px"></i>
+                    </span>
+                  </span>
+                  <span class="app-brand-text demo text-heading fw-bold">Tezex</span>
+                </a>
+              </div>
+              <h4 class="mb-1">Welcome to Tezex! 👋</h4>
+              <p class="mb-6">Please sign in to your account to access the dashboard</p>
+              <form id="loginForm">
+                <div class="mb-6">
+                  <label for="email" class="form-label">Email or Username</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email or username"
+                    value="admin@tezex.com"
+                    autofocus />
+                </div>
+                <div class="mb-6 form-password-toggle">
+                  <label class="form-label" for="password">Password</label>
+                  <div class="input-group input-group-merge">
+                    <input
+                      type="password"
+                      id="password"
+                      class="form-control"
+                      name="password"
+                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                      value="admin123" />
+                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                  </div>
+                </div>
+                <div class="mb-6 d-flex justify-content-between align-items-center">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="remember-me" />
+                    <label class="form-check-label" for="remember-me"> Remember Me </label>
+                  </div>
+                  <a href="javascript:void(0);">
+                    <small>Forgot Password?</small>
+                  </a>
+                </div>
+                <div class="mb-6">
+                  <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                </div>
+              </form>
+              <p class="text-center">
+                <small class="text-muted">Demo login credentials are pre-filled</small>
+              </p>
+              <div class="alert alert-info mt-3">
+                <small>
+                  <i class="bx bx-info-circle me-1"></i>
+                  <strong>Note:</strong> This is a demo login. In production, integrate with your authentication system.
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../../../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../../../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../../assets/vendor/js/bootstrap.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Toggle password visibility
+        $('.form-password-toggle .input-group-text').on('click', function () {
+          const input = $(this).siblings('input');
+          const icon = $(this).find('i');
+
+          if (input.attr('type') === 'password') {
+            input.attr('type', 'text');
+            icon.removeClass('bx-hide').addClass('bx-show');
+          } else {
+            input.attr('type', 'password');
+            icon.removeClass('bx-show').addClass('bx-hide');
+          }
+        });
+
+        // Handle login
+        $('#loginForm').on('submit', function (e) {
+          e.preventDefault();
+
+          const email = $('#email').val().trim();
+          const password = $('#password').val();
+
+          // Demo authentication - in production, validate against backend
+          if (email && password) {
+            // Store simple session flag
+            sessionStorage.setItem('tezex_logged_in', 'true');
+            sessionStorage.setItem('tezex_user', email);
+
+            // Redirect to dashboard
+            window.location.href = '../dashboard.html';
+          } else {
+            alert('Please enter both email and password');
+          }
+        });
+
+        // Check if already logged in
+        if (sessionStorage.getItem('tezex_logged_in') === 'true') {
+          window.location.href = '../dashboard.html';
+        }
+      });
+    </script>
+  </body>
+</html>
